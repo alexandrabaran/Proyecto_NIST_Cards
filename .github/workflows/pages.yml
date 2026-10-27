@@ -33,7 +33,7 @@ jobs:
           node-version: 22
 
       - name: Run unit tests
-        run: npm test
+        run: node --test
 
       - name: Prepare static site
         run: |
