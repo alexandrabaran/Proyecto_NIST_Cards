@@ -39,20 +39,29 @@ El workflow de GitHub Actions incluido en `.github/workflows/pages.yml` ejecuta 
 
 ```text
 .
-├── .github/workflows/pages.yml  # Pruebas y publicación en GitHub Pages
+├── .github/
+│   └── workflows/
+│       └── pages.yml            # Publicación en GitHub Pages y validaciones
 ├── assets/
-│   ├── css/styles.css           # Estilos responsive
+│   ├── css/
+│   │   └── styles.css           # Estilos responsive y accesibilidad
 │   └── js/
 │       ├── app.js               # Estado e interacción de la interfaz
-│       ├── csv.js               # Carga, parsing e IDs de registros
-│       └── deck.js              # Búsqueda, selección y paginación
+│       ├── csv.js               # Carga, parsing y generación de IDs
+│       └── deck.js              # Búsqueda, aleatoriedad y agrupación de tarjetas
 ├── data/
-│   └── nist_glossary.csv        # Fuente de datos de la aplicación
-├── tests/                       # Pruebas automatizadas y smoke test
-├── index.html
-├── LICENSE                     # Licencia MIT del código de la aplicación
-├── package.json
-└── SPEC.md                      # Requisitos y criterios de aceptación
+│   └── nist_glossary.csv        # Fuente de datos del glosario
+├── tests/
+│   ├── csv.test.js              # Validaciones de parsing y IDs
+│   ├── deck.test.js             # Búsqueda y selección sin repetición inmediata
+│   ├── glossary.test.js         # Casos de términos, sinónimos y agrupación
+│   └── pages-smoke.py           # Smoke test del sitio publicado
+├── AGENTS.md                    # Instrucciones del repositorio para agentes
+├── LICENSE                      # Licencia MIT del código
+├── README.md                    # Documentación general del proyecto
+├── SPEC.md                      # Requisitos y criterios de aceptación
+├── index.html                   # Entrada principal de la aplicación
+└── README.md                    # Documentación general del proyecto
 ```
 
 ## Accesibilidad y privacidad
