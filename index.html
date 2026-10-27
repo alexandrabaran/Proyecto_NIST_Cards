@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f2e9">
+    <meta
+      name="description"
+      content="Estudiá términos del glosario de ciberseguridad del NIST con flashcards aleatorias."
+    >
+    <title>Flashcards NIST | Glosario de ciberseguridad</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script type="module" src="./assets/js/app.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <a class="brand" href="./" aria-label="Flashcards NIST, inicio">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>Glosario NIST</span>
+        </a>
+        <p class="eyebrow">Ciberseguridad · Estudio aleatorio</p>
+      </header>
+
+      <section class="study-panel" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">Una tarjeta a la vez</p>
+          <h1 id="page-title">Aprendé un término nuevo</h1>
+          <p class="intro-copy">Pensá qué significa. Cuando quieras, revelá la definición y sus referencias.</p>
+        </div>
+
+        <p id="loading-message" class="message" role="status">Cargando el glosario…</p>
+        <p id="error-message" class="message message-error" role="alert" hidden></p>
+        <p id="study-message" class="visually-hidden" role="status" aria-live="polite"></p>
+
+        <form id="search-form" class="search-form" role="search">
+          <label for="search-input">Buscar en el glosario</label>
+          <div class="search-controls">
+            <input
+              id="search-input"
+              name="q"
+              type="search"
+              autocomplete="off"
+              placeholder="Escribí un término o sinónimo"
+              aria-controls="search-results"
+              disabled
+            >
+            <button class="button button-primary" type="submit" disabled>Buscar</button>
+            <button id="clear-search-button" class="button button-secondary" type="button" disabled>Limpiar</button>
+          </div>
+          <p id="search-message" class="search-message" role="status" aria-live="polite" hidden></p>
+          <ul id="search-results" class="search-results" aria-label="Coincidencias del glosario" hidden></ul>
+        </form>
+
+        <article id="flashcard" class="flashcard" aria-labelledby="term" hidden>
+          <div class="card-topline">
+            <span class="card-label">Término</span>
+            <span class="sparkle" aria-hidden="true">✳</span>
+          </div>
+          <h2 id="term" class="term"></h2>
+
+          <div id="card-details" class="card-details" hidden>
+            <div class="detail-block">
+              <h3>Definiciones</h3>
+              <ol id="definitions" class="definition-list"></ol>
+              <nav id="definition-pagination" class="definition-pagination" aria-label="Paginación de definiciones" hidden>
+                <button id="previous-definition-page" class="button button-secondary pagination-button" type="button" aria-controls="definitions" disabled>
+                  Anterior
+                </button>
+                <span id="definition-page-status" class="definition-page-status" role="status" aria-live="polite"></span>
+                <button id="next-definition-page" class="button button-secondary pagination-button" type="button" aria-controls="definitions">
+                  Siguiente
+                </button>
+              </nav>
+            </div>
+            <div id="synonym-block" class="detail-block" hidden>
+              <h3>Abreviaturas y sinónimos</h3>
+              <ul id="synonyms" class="detail-list"></ul>
+            </div>
+            <div class="detail-block" hidden>
+              <h3>Fuentes</h3>
+              <ul id="source-links" class="detail-list"></ul>
+            </div>
+          </div>
+
+          <button id="reveal-button" class="button button-secondary reveal-button" type="button" aria-expanded="false" aria-controls="card-details" disabled>
+            Revelar definición y datos
+          </button>
+        </article>
+
+        <section id="study-controls" class="study-controls" aria-label="Acciones de estudio" hidden>
+          <button id="next-button" class="button button-primary" type="button" disabled>
+            Otra tarjeta aleatoria <span aria-hidden="true">→</span>
+          </button>
+          <p id="deck-notice" class="deck-notice" hidden></p>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <p>Datos del <a href="https://csrc.nist.gov/glossary" target="_blank" rel="noopener noreferrer">glosario del NIST</a>.</p>
+        <p>La aplicación no guarda datos de estudio.</p>
+      </footer>
+    </main>
+  </body>
+</html>
