@@ -23,7 +23,7 @@ test("parseGlossary accepts a valid header in a different order", () => {
 test("parseGlossary rejects missing columns and malformed records", () => {
   assert.throws(() => parseGlossary("term,link,definitions\nterm,url,definition\n"), /encabezado/);
   assert.throws(() => parseGlossary("term,link,abbrSyn,definitions\nterm,url,synonym\n"), /campos/);
-  assert.throws(() => parseCSV('term,link,abbrSyn,definitions\nterm,url,synonym,"unfinished'), /no cierra/);
+  assert.throws(() => parseCSV('term,link,abbrSyn,definitions\nterm,url,synonym,"unfinished'), /termina antes de cerrar/);
 });
 
 test("identifiers are unique and deterministic for duplicate rows", () => {
